@@ -1,0 +1,43 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<script src="~/js/index.js"></script>
+@section StyleSheet {
+    <link rel="stylesheet" href="~/css/Index.css" asp-append-version="true"/>
+}
+@if (User.Identity?.IsAuthenticated ?? false) {
+    <div class="grid-container">
+        <div class="welcome-back">
+            <h1>Welcome back, @Model.userDTO.FirstName</h1>
+        </div>
+        <div class="slideshow">
+            <!-- Add slideshow -->
+            <p>Recomended for you --></p>
+            <img src="~/img/pc3.png" />
+            <div class="caption">Caption</div>
+        </div>
+        <div class="button">
+            <a class="btn" href="/Index">
+                <button> All Items --> </button>
+            </a>
+        </div>
+    </div>
+}
+else {
+    <div class="grid-container">
+    <div class="welcome-back">
+        <h1>Welcome!</h1>
+    </div>
+    <div class="slideshow">
+        <!-- Add slideshow -->
+        <p>Currently popular products:</p>
+        <img src="~/img/pc2.png"/>
+        <div class="caption">Caption</div>
+    </div>
+    <div class="button">
+        <button href="/Shop"> All Items --> </button>
+    </div>
+</div>
+}

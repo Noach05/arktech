@@ -1,0 +1,38 @@
+html {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+header, nav {
+    background-color: #722830;
+    color: #FDE8D1;
+    font-size: 18px;
+}
+
+#off-white {
+    color: #FDE8D1;
+}
+
+img.logo{
+    height: auto;
+    width: 100%;
+}
+
+a.logo{
+    max-width: 200px;
+    margin-right: 50px;
+}

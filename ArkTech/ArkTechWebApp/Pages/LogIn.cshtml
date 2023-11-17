@@ -1,0 +1,26 @@
+﻿@page
+@model ArkTechWebApp.Pages.LogInModel
+@{
+}
+@section StyleSheet {
+    <link rel="stylesheet" href="~/css/logIn.css" />
+}
+@if (!User.Identity.IsAuthenticated && TempData["ErrorMessageLogin"] != null)
+{
+    <p class="error">@Html.Raw(TempData["ErrorMessageLogin"])</p>
+}
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form method="post">
+        <label asp-for="UserLogInDTO.Email">Email</label>
+        <input asp-for="UserLogInDTO.Email" type="text" id="email" name="Email" placeholder="Email" class="form-control" required>
+        <span asp-validation-for="UserLogInDTO.Email"></span>
+
+        <label asp-for="UserLogInDTO.Password">Password</label>
+        <input asp-for="UserLogInDTO.Password" type="password" id="password" name="Password" placeholder="Password" class="form-control" required>
+        <span asp-validation-for="UserLogInDTO.Password"></span>
+
+        <button type="submit">Log In</button>
+    </form>
+</div>

@@ -1,0 +1,19 @@
+﻿@page
+@model ArkTechWebApp.Pages.ProfileModel
+@{
+}
+@section StyleSheet {
+    <link rel="stylesheet" href="~/css/profile.css" asp-append-version="true" />
+}
+@if (User.Identity.IsAuthenticated && Model.userDTO != null)
+{
+<div class="button-container">
+    <form method="post" asp-page-handler="LogOut">
+        <button type="submit">LogOut</button>
+    </form>
+</div>
+}
+else
+{
+    <a href="/LogIn">LogIn</a>
+}

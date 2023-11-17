@@ -1,0 +1,103 @@
+﻿@page
+@using ArkTechWebApp.DTO
+@model ArkTechWebApp.Pages.ShopModel
+@{
+}
+@section StyleSheet {
+    <link rel="stylesheet" href="~/css/shop.css" asp-append-version="true" />
+}
+
+
+<div class="grid-container">
+    <div class="welcome-back">
+        <h1>Enjoy Shopping!</h1>
+    </div>
+
+    @*<div id="loading" style="display: none;">
+        <p>Loading products...</p>
+    </div>*@
+
+    <div class="products-container">
+        @foreach (var product in Model.productDTOs)
+        {
+            <div class="product">
+                <img src="data:image;base64,@System.Convert.ToBase64String(product.Image)" />
+            <div class="prod-caption">
+                    <a href="/product1.html">@product.Name</a>
+                </div>
+            </div>
+        }
+        @*<div class="product">
+            <img src="~/img/cpu.jpg" alt="Product 1" />
+            <div class="prod-caption">
+                <a href="/product1.html">Name of Prodcut</a>
+            </div>
+        </div>
+        <div class="product">
+            <img src="~/img/cpu.jpg" alt="Product 1" />
+            <div class="prod-caption">
+                <a href="/product1.html">Name of Prodcut</a>
+            </div>
+        </div>
+        <div class="product">
+            <img src="~/img/cpu.jpg" alt="Product 1" />
+            <div class="prod-caption">
+                <a href="/product1.html">Name of Prodcut</a>
+            </div>
+        </div>
+        <div class="product">
+            <img src="~/img/cpu.jpg" alt="Product 1" />
+            <div class="prod-caption">
+                <a href="/product1.html">Name of Prodcut</a>
+            </div>
+        </div>
+        <div class="product">
+            <img src="~/img/cpu.jpg" alt="Product 1" />
+            <div class="prod-caption">
+                <a href="/product1.html">Name of Prodcut</a>
+            </div>
+        </div>
+        <div class="product">
+            <img src="~/img/cpu.jpg" alt="Product 1" />
+            <div class="prod-caption">
+                <a href="/product1.html">Name of Prodcut</a>
+            </div>
+        </div>
+        <div class="product">
+            <img src="~/img/cpu.jpg" alt="Product 1" />
+            <div class="prod-caption">
+                <a href="/product1.html">Name of Prodcut ayudjas - ghawkas</a>
+            </div>
+        </div>
+        <div class="product">
+            <img src="~/img/cpu.jpg" alt="Product 1" />
+            <div class="prod-caption">
+                <a href="/product1.html">Name of Prodcut aisdasuya iuasd </a>
+            </div>
+        </div>
+        <div class="product">
+            <img src="~/img/cpu.jpg" alt="Product 1" />
+            <div class="prod-caption">
+                <a href="/product1.html">Name</a>
+            </div>
+        </div>
+        <div class="product">
+            <img src="~/img/cpu.jpg" alt="Product 1" />
+            <div class="prod-caption">
+                <a href="/product1.html">Name of Prodcut sahidasytdoa i7ahda oasyd asd- sadguas</a>
+            </div>
+        </div>*@
+    </div>
+</div>
+
+@*<div class="slideshow">
+            <p>Recomended for you --></p>
+            <img src="~/img/pc3.png" />
+            <div class="caption">Caption</div>
+        </div>*@
+
+
+
+@section Scripts{
+    <script src="~/js/shop.js" asp-append-version="true"></script>
+}

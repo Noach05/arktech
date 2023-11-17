@@ -1,0 +1,88 @@
+﻿@page
+@model ArkTechWebApp.Pages.CartModel
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+
+@section StyleSheet {
+    <link rel="stylesheet" href="~/css/cart.css" asp-append-version="true"/>
+}
+
+<div class="cart-container">
+    <div class="cart-items">
+        @*@foreach (var item in Model.CartItems)
+        {
+            <div class="cart-item">
+                <img src="@item.ImageUrl" alt="@item.ProductName" class="item-image">
+                <div class="item-details">
+                    <p class="item-name">@item.ProductName</p>
+                    <p class="item-price">$@item.Price</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button minus">-</button>
+                        <span class="quantity">@item.Quantity</span>
+                        <button class="quantity-button plus">+</button>
+                    </div>
+                </div>
+                <button class="remove-item">X</button>
+            </div>
+            <hr class="item-divider">
+        }*@
+        <div class="cart-item">
+            <img src="/img/cpu.jpg" alt="" class="item-image">
+            <div class="item-details">
+                <div class="item-info">
+                    <p class="item-name">ProductName 1</p>
+                    <p class="item-price">$12.50</p>
+                </div>
+            </div>
+            <div class="quantity-controls">
+                <button class="quantity-button minus">-</button>
+                <span class="quantity">1</span>
+                <button class="quantity-button plus">+</button>
+            </div>
+            <button class="remove-item">X</button>
+        </div>
+        <hr class="item-divider">
+
+        <div class="cart-item">
+            <img src="/img/cpu.jpg" alt="" class="item-image">
+            <div class="item-details">
+                <div class="item-info">
+                    <p class="item-name">ProductName 2</p>
+                    <p class="item-price">$7.50</p>
+                    
+                </div>
+            </div>
+            <div class="quantity-controls">
+                <button class="quantity-button minus">-</button>
+                <span class="quantity">1</span>
+                <button class="quantity-button plus">+</button>
+            </div>
+            <button class="remove-item">X</button>
+        </div>
+        <hr class="item-divider">
+    </div>
+    
+    <div class="order-summary">
+        <h2>Order Summary</h2>
+        <div class="coupon">
+            <input type="text" placeholder="Enter Coupon Code">
+            <button class="apply-coupon">Apply</button>
+        </div>
+        <div class="total-sum">
+            <div class="title">
+                <p>Subtotal:</p>
+                <p class="subtotal-price">$20.00 @*@Model.Subtotal*@</p>
+            </div>
+            <div class="title">
+                <p>Discount:</p>
+                <p class="discount-amount">$5.00 @*@Model.DiscountAmount*@</p>
+            </div>
+            <div class="title total">
+                <p>Total:</p>
+                <p class="total-price">$15.00 @*@Model.Total*@</p>
+            </div>
+        </div>
+        <button class="checkout-button">Checkout</button>
+    </div>
+</div>
